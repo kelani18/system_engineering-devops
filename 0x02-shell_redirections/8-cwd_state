@@ -1,0 +1,3 @@
+#!/bin/bash
+# Write the current directory listing to a file called ls_cwd_content
+ls -la > ls_cwd_content
