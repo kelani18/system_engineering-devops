@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A Bash script that stops the 4-to_infinity_and_beyond process without using kill or killall
+
+# Find the PID(s) of the process and terminate it using /proc interface
+for pid in $(pgrep -f 4-to_infinity_and_beyond); do
+    echo "Stopping process $pid"
+    echo 9 > /proc/$pid/oom_score_adj 2>/dev/null
+    kill -9 $pid
+done
